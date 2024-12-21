@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>newspaper - herojus newspaper</title>
+    <link rel="icon" type="image/x-icon" href="../../static/img/herojus_purple_logo.ico">
+    <link rel="stylesheet" type="text/css" href="../../static/css/choice-car-style.css">
+    <style>
+        * {
+            font-family: Herojus !important;
+        }
+
+        @font-face {
+            font-family: Herojus;
+            src: url('../../static/font/HerojusRegular.woff2');
+        }
+    </style>
+    <style>
+        a.li-item {
+            font-size: 20px !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="navbar">
+            <div class="navbar-items">
+                <a href="../../../index.html" class="li-item">PAGRINDINIS</a>
+                <div class="dropdown">
+                    <a href="#" class="li-item">LAIKRAŠČIAI</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../routes/choice.html" class="li-item">ARCHYVAS</a></li>
+                        <li><a href="#" class="li-item">NAUJIENOS</a></li>
+                        <li><a href="../routes/irasas.html" class="li-item">VAIZDO ĮRAŠŲ ARCHYVAS</a></li>
+                    </ul>
+                </div>
+                <a href="#" class="li-item">PRISIJUNKITE</a>
+                <div class="dropdown language-dropdown">
+                    <a href="#" id="language-link" onclick="switchLanguage('ua')">
+                        <img src="../../static/img/lithuanian-icon.svg" alt="LT Flag" class="flag-icon"> LT
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#" onclick="switchLanguage('ua')">
+                                <img src="../../static/img/ukrainian-icon.svg" alt="UA Flag" class="flag-icon"> UA
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <img src="../../static/img/heroiam_logo.png" alt="Heroiam Logo">
+            </div>
+        </div>
+    </div>
+
+    <div class="carousel-container">
+        <div class="carousel-slide">
+            <img src="../docs/gazeta_21.10/1_page-0001.jpg" alt="Image 1">
+            <img src="../docs/gazeta_21.10/1_page-0002.jpg" alt="Image 2">
+            <img src="../docs/gazeta_21.10/1_page-0003.jpg" alt="Image 3">
+            <img src="../docs/gazeta_21.10/1_page-0004.jpg" alt="Image 4">
+            <img src="../docs/gazeta_21.10/1_page-0005.jpg" alt="Image 5">
+            <img src="../docs/gazeta_21.10/1_page-0006.jpg" alt="Image 6">
+            <img src="../docs/gazeta_21.10/1_page-0007.jpg" alt="Image 7">
+            <img src="../docs/gazeta_21.10/1_page-0008.jpg" alt="Image 8">
+            <img src="../docs/gazeta_21.10/1_page-0009.jpg" alt="Image 9">
+            <img src="../docs/gazeta_21.10/1_page-0010.jpg" alt="Image 10">
+            <img src="../docs/gazeta_21.10/1_page-0011.jpg" alt="Image 11">
+            <img src="../docs/gazeta_21.10/1_page-0012.jpg" alt="Image 12">
+            <img src="../docs/gazeta_21.10/1_page-0013.jpg" alt="Image 13">
+        </div>
+        <div class="carousel-arrows">
+            <button id="prevBtn">⬆️</button>
+            <button id="nextBtn">⬇️</button>
+        </div>
+    </div>
+
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Оберіть спосіб перегляду газети</h2>
+            <button class="modal-btn" id="spread-view">Розкладений вигляд</button>
+            <button class="modal-btn" id="flip-view">Перегортання</button>
+        </div>
+    </div>
+
+    <script>
+        const carouselSlide = document.querySelector('.carousel-slide');
+        const images = document.querySelectorAll('.carousel-slide img');
+
+        let currentIndex = 0;
+        const totalImages = images.length;
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            if (currentIndex < totalImages - 1) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+
+        function updateCarousel() {
+            const imageHeight = images[0].clientHeight; // Теперь используем высоту изображений
+            carouselSlide.style.transform = `translateY(-${currentIndex * imageHeight}px)`; // Перемещаем по оси Y
+        }
+
+        window.addEventListener('resize', updateCarousel);
+    </script>
+
+    <style>
+        .carousel-container {
+            overflow: hidden;
+            /* Скрываем часть, выходящую за пределы */
+            position: relative;
+            width: 100%;
+            /* Контейнер занимает всю ширину */
+            max-width: 500px;
+            /* Устанавливаем максимальную ширину для адаптивности */
+            height: 600px;
+            /* Высота контейнера для вертикального каруселя */
+            margin: auto;
+            margin-top: 25px;
+            padding: 55px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+            /* Скругленные углы для контейнера */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            /* Тень для контейнера */
+        }
+
+        .carousel-slide {
+            display: flex;
+            flex-direction: column;
+            /* Изменяем направление на вертикальное */
+            transition: transform 0.5s ease-in-out;
+            /* Плавное перелистывание */
+            width: 100%;
+        }
+
+        .carousel-slide img {
+            width: 90%;
+            /* Изображения занимают всю ширину контейнера */
+            height: auto;
+            /* Высота автоматически определяется в зависимости от пропорций изображений */
+            max-height: 100%;
+            /* Ограничиваем максимальную высоту изображений */
+            border-radius: 15px;
+            /* Скругленные углы для изображений */
+        }
+
+        @media (max-width: 768px) {
+            .carousel-slide img {
+                width: 120% !important;
+            }
+        }
+
+        .carousel-arrows {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            /* Отступ слева */
+            display: flex;
+            flex-direction: column;
+            transform: translateY(-50%);
+        }
+
+        .carousel-arrows button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        .carousel-arrows button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</body>
+
+</html>

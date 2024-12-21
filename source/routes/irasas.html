@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irasas - herojus newspaper</title>
+    <link rel="icon" type="image/x-icon" href="../static/img/herojus_purple_logo.ico">
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=REM:ital,wght@0,100..900;1,100..900&family=Rubik+Glitch&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <div class="navbar">
+            <div class="navbar-items">
+                <button class="burger-menu" id="burgerMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <img src="../static/img/heroiam_logo.png" alt="Heroiam Logo">
+                <a href="../../index.html" class="li-item">PAGRINDINIS</a>
+                <div class="dropdown">
+                    <a href="#" class="li-item">LAIKRAŠČIAI</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../routes/choice.html" class="li-item">ARCHYVAS</a></li>
+                        <li><a href="#" class="li-item">NAUJIENOS</a></li>
+                        <li><a href="../routes/irasas.html" class="li-item">VAIZDO ĮRAŠŲ ARCHYVAS</a></li>
+                    </ul>
+                </div>
+                <a href="#" class="li-item">PRISIJUNKITE</a>
+                <div class="dropdown language-dropdown">
+                    <a href="#" id="language-link" onclick="switchLanguage('ua')">
+                        <img src="../static/img/lithuanian-icon.svg" alt="LT Flag" class="flag-icon"> LT
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="parallax-section">
+        <div class="parallax-content">
+            <h2 class="parallax-text">Vaizdo įrašų archyvas</h2>
+            <img src="../static/img/ns.png" alt="Your Image" class="parallax-image">
+        </div>
+    </div>
+
+    <!-- Видео блок с закругленными углами -->
+    <div class="video-section">
+        <iframe src="https://www.youtube.com/embed/lQSks7m6Ouc?si=7nI91HjweAn3IDGN" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <style>
+        .parallax-section {
+            font-family: REM;
+        }
+        
+        /* Стили для секции с видео */
+        .video-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            background-color: #5a2a82;
+            height: 100vh;
+        }
+
+        .video-section iframe {
+            width: 100%;
+            max-width: 900px;
+            height: 500px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Мобильная адаптация */
+        @media (max-width: 768px) {
+            .video-section {
+                padding: 50px;
+            }
+
+            .video-section iframe {
+                width: 100%;
+                height: 20rem;
+                max-width: 100%;
+                border-radius: 20px;
+            }
+        }
+    </style>
+
+    <script src="../static/js/script.js"></script>
+</body>
+
+</html>

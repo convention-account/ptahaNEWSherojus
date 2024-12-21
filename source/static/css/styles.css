@@ -1,0 +1,442 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+    /* background-color: #5a2a82; */
+    background: linear-gradient(135deg, #5a2a82, #7d3abf);
+    font-family: Herojus;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url('../font/Montserrat-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: jonova;
+    src: url("../font/Jonova-Regular.ttf");
+}
+
+@font-face {
+    font-family: EUKRr;
+    src: url('../font/e-Ukraine-Regular.woff2');
+}
+
+@font-face {
+    font-family: Herojus;
+    src: url('../font/HerojusRegular.woff2');
+}
+
+@font-face {
+    font-family: Maryadale;
+    src: url('../font/Marydale.woff2');
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.header {
+    background-color: #5a2a82;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Herojus;
+}
+
+.navbar-items {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-items a {
+    color: #ffffff;
+    padding: 10px 15px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.navbar-items a:hover {
+    background-color: #7d3abf;
+    border-radius: 5px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #5a2a82;
+    margin-top: 10px;
+    list-style-type: none;
+    padding: 0;
+    border-radius: 5px;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: #ffffff;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #7d3abf;
+}
+
+a.li-item {
+    font-size: 20px !important;
+    padding: 15px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.navbar-items img {
+    height: 70px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.language-dropdown {
+    position: relative;
+    margin-right: 20px;
+}
+
+.language-link {
+    color: #ffffff;
+    padding: 5px 5px;
+    display: flex;
+    align-items: center;
+}
+
+.flag-icon {
+    width: auto;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.parallax-section {
+    background-color: #5a2a82;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: visible;
+    opacity: 0;
+    animation: fadeInDown 1s forwards;
+}
+
+.parallax-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.parallax-image {
+    width: 800px;
+    height: auto;
+}
+
+.parallax-text {
+    color: #ffffff;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.circle {
+    background-color: white;
+    border-radius: 50%;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.circle-section {
+    background-color: #5a2a82;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    opacity: 0;
+    animation: fadeInDown 1s forwards;
+}
+
+.circle-text {
+    color: #5a2a82;
+    font-size: 36px;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Мобильная адаптация */
+@media only screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar-items {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-items a {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .dropdown-menu {
+        position: relative;
+        background-color: #7d3abf;
+        width: 100%;
+        text-align: left;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .navbar-items img {
+        height: 50px;
+        margin: 10px 0;
+    }
+
+    .parallax-image {
+        width: 100%;
+    }
+
+    .parallax-text {
+        font-size: 24px;
+    }
+
+    .circle {
+        padding: 30px;
+    }
+
+    .circle-text {
+        font-size: 24px;
+    }
+}
+
+/* Стили для бургер-иконки */
+.burger-menu {
+    display: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 101;
+    /* Чтобы бургер был поверх меню */
+    position: relative;
+}
+
+.burger-menu span {
+    display: block;
+    width: 35px;
+    height: 4px;
+    margin: 6px 0;
+    background-color: white;
+    transition: 0.4s;
+}
+
+/* Анимация бургер-меню превращения в крестик */
+.burger-menu.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.burger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/* Основные стили для бургер-меню */
+@media (max-width: 768px) {
+    .small-circle-image {
+        width: 300px;
+        /* Уменьшает ширину изображения */
+        height: auto;
+        /* Сохраняет пропорции */
+    }
+
+    .burger-menu {
+        display: block;
+        position: fixed;
+        /* Меню фиксируется на экране */
+        top: 10px;
+        right: 1rem;
+        z-index: 101;
+    }
+
+    .custom-alert {
+        margin-right: 8rem;
+        width: 60%;
+    }
+
+    .navbar-items {
+        display: flex;
+        right: -400px;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #333;
+        padding: 20px;
+        width: 80%;
+        /* Меню не выходит за пределы экрана */
+        max-width: 300px;
+        position: fixed;
+        /* Фиксированное положение для прокрутки */
+        top: 0;
+        /* По умолчанию скрываем за экраном */
+        height: 100vh;
+        /* Меню будет по всей высоте экрана */
+        transition: right 0.3s ease-in-out;
+        z-index: 100;
+    }
+
+    a.li-item {
+        font-size: 20px !important;
+    }
+
+    #laikrastis {
+        margin-top: 8px;
+    }
+
+    /* Активное состояние для показа меню */
+    .navbar-items.active {
+        right: 0;
+        /* Когда меню активно, оно выезжает на экран */
+    }
+
+    .navbar-items a,
+    .dropdown,
+    .language-dropdown {
+        display: block;
+        padding: 15px;
+        color: white;
+        text-decoration: none;
+        width: 100%;
+        text-align: left;
+        background-color: #444;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .navbar-items a:hover,
+    .dropdown:hover {
+        background-color: #555;
+    }
+
+    .dropdown-menu {
+        display: none;
+        position: relative;
+        background-color: #444;
+        list-style: none;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .dropdown-menu li {
+        margin: 0;
+    }
+
+    .dropdown-menu a {
+        display: block;
+        padding: 10px;
+        color: white;
+        transition: background-color 0.3s;
+    }
+
+    .dropdown-menu a:hover {
+        background-color: #555;
+    }
+}
+
+.footer {
+    text-shadow: 1.4px 1.4px #310952;
+    background-color: #5a2a82;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    /* Убедитесь, что padding учитывается в ширине */
+}
+
+.footer-content {
+    max-width: 1200px;
+    /* Максимальная ширина для содержимого */
+    margin: 0 auto;
+    /* Центрирование */
+    border-radius: 15px;
+    padding: 0 20px;
+    /* Отступы для содержимого */
+}
+
+.footer-content:hover {
+    background-color: #4c236d;
+    cursor: pointer;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.parallax-text {
+    font-size: 60px;
+    font-family: REM;
+}
+
+.parallax-text2 {
+    font-size: 40px;
+    padding: 8px;
+    color: #7d3abf;
+    font-family: REM;
+    background: rgb(255, 255, 255);
+    border-radius: 15px;
+}
+
+/* .flag-icon {
+    width: 40%;
+} */

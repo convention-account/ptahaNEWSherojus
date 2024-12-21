@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagrindinis - herojus newspaper</title>
+    <link rel="icon" type="image/x-icon" href="source/static/img/herojus_purple_logo.ico">
+    <link rel="stylesheet" type="text/css" href="source/static/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=REM:ital,wght@0,100..900;1,100..900&family=Rubik+Glitch&display=swap"
+        rel="stylesheet">
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            /* Отключает горизонтальную прокрутку */
+        }
+
+        * {
+            box-sizing: border-box;
+            /* Учитывает padding и border в ширине элементов */
+        }
+
+        .container {
+            max-width: 100%;
+            /* Ограничивает ширину контейнера */
+            overflow-x: hidden;
+        }
+
+        .circle-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            animation: fadeInDown 1s forwards;
+            padding: 20px;
+        }
+
+        .circle {
+            background: radial-gradient(circle, #ffffff, #e0e0e0);
+            border-radius: 50%;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .circle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .circle-text {
+            font-size: 24px;
+            color: #5a2a82;
+            text-align: center;
+            font-weight: bold;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .parallax-text-cr {
+            font-size: 24px;
+            color: #ffffff;
+            text-align: center;
+            max-width: 600px;
+            line-height: 1.5;
+            font-family: Nunito;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Стили для кастомного алерта */
+        .custom-alert {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: none;
+            /* Скрыт по умолчанию */
+        }
+
+        .custom-alert .close-btn {
+            background: none;
+            border: none;
+            color: #666666;
+            cursor: pointer;
+            font-size: 35px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .custom-alert h3 {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="navbar">
+            <div class="navbar-items">
+                <!-- Бургер-меню для мобильных устройств -->
+                <button class="burger-menu" id="burgerMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Логотип -->
+                <img src="source/static/img/heroiam_logo.png" class="li-img" alt="Heroiam Logo">
+
+                <!-- Ссылки меню -->
+                <a href="#" class="li-item">PAGRINDINIS</a>
+                <div class="dropdown">
+                    <a href="#" class="li-item" id="laikrastis">LAIKRAŠČIAI</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="source/routes/choice.html" class="li-item">ARCHYVAS</a></li>
+                        <li><a href="#" class="li-item">NAUJIENOS</a></li>
+                        <li><a href="source/routes/irasas.html" class="li-item">VAIZDO ĮRAŠŲ ARCHYVAS</a></li>
+                    </ul>
+                </div>
+                <a href="#" class="li-item">PRISIJUNKITE</a>
+                <div class="dropdown language-dropdown">
+                    <a href="#" id="language-link" onclick="switchLanguage('ua')">
+                        <img src="source/static/img/ukrainian-icon3.svg" alt="LT Flag" class="flag-icon"> UA
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="parallax-section">
+        <div class="parallax-content">
+            <h2 class="parallax-text">Šviežia presa</h2>
+            <h2 class="parallax-text2">kiekviename numeryje</h2>
+            <img src="source/static/img/ns.png" alt="Your Image" class="parallax-image" inert
+                style="user-select: none;">
+        </div>
+    </div>
+
+    <div class="circle-section">
+        <div class="circle">
+            <p class="circle-text" inert style="user-select: none;"><img src="source/static/img/ptaha.png"></p>
+        </div>
+        <h2 class="parallax-text-cr">Mūsų mokyklos laikraštis yra unikalus centras, kuriame pateikiami laikraščio
+            numeriai (nauji ir seni), nufilmuoti vaizdo įrašai (įskaitant specialius interviu ar podkastus) ir
+            mokyklos nuotraukų galerija. Stengiamės integruotis į lietuvių kalbą, deja, kol kas laikraščiai yra tik
+            ukrainiečių kalba. Sekite svetainę, kad gautumėte naujienas!</h2>
+    </div>
+
+    <div class="circle-section">
+        <div class="circle">
+            <p class="circle-text" inert style="user-select: none;">
+                <img src="source/static/img/herojus_black_logo.png" class="small-circle-image">
+            </p>
+        </div>
+        <h2 class="parallax-text-cr">Herojus yra nevalstybinė mokykla, pradėjusi savo veiklą 2015 metais.
+
+            Herojaus MISIJA – skatinti visapusišką asmens pažangą, kuriant motyvuojančias ugdymo patirtis ir mokymo(si)
+            įrankius.
+        </h2>
+    </div>
+
+
+    <!-- Кастомный алерт -->
+    <div class="custom-alert" id="customAlert" style="font-family: Ubuntu;">
+        <button class="close-btn" id="closeAlert">&times;</button>
+        <h3>Gerbiami lankytojai</h3>
+        <p>Svetainė yra beta testavimo etape. Atsiprašome už laikinus nepatogumus!</p>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p style="font-weight: bold;">&copy; 2024 "PTAHA NEWS" Herojus Newspaper.</p>
+            <hr>
+            <l style="font-weight: bold;">Adresas: </l>Gedimino g. 10, Kaunas<br>
+            <l style="font-weight: bold;">Susisiekite! </l><a href="mailto:asesu@herojus.lt"
+                style="color: white;">asesu@herojus.lt</a><br>
+            <l style="font-weight: bold;">Herojus </l>© Visos teisės saugomos 2015 - 2024
+            </p>
+            <div class="footer-links">
+                <a href="https://www.herojus.lt/lt/herojus">Apie</a>
+                <a href="https://www.herojus.lt/lt/kontaktai">Kontaktai</a>
+                <a href="https://www.herojus.lt/lt/privatumo-politika">Privatumo PoIitika</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="source/static/js/script.js"></script>
+    <script>
+        // Показать кастомный алерт через 1 секунду после загрузки страницы
+        window.onload = function () {
+            setTimeout(function () {
+                document.getElementById('customAlert').style.display = 'block';
+            }, 1000);
+        };
+
+        // Закрытие кастомного алерта
+        document.getElementById('closeAlert').addEventListener('click', function () {
+            document.getElementById('customAlert').style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>
