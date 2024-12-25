@@ -267,7 +267,7 @@ body {
     cursor: pointer;
 }
 
-/* Стили для бургер-меню */
+/* Общие стили для бургер-меню */
 .burger-menu {
     display: none;
     flex-direction: column;
@@ -277,35 +277,43 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 15; /* Поверх остальных элементов */
+    z-index: 20;
 }
 
 .burger-menu span {
     height: 3px;
     width: 100%;
-    background: white; /* Цвет бургер-меню */
-    transition: all 0.3s ease;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Показ бургер-меню на мобильных устройствах */
+/* Стили для меню на мобильных устройствах */
 @media (max-width: 768px) {
+    .burger-menu {
+        display: flex;
+    }
+
     .navbar-items {
-        display: none; /* Скрываем элементы меню по умолчанию */
+        display: none; /* Скрываем по умолчанию */
         flex-direction: column;
-        width: 100%;
         position: absolute;
-        top: 50px; /* Отступ от верхней части страницы */
+        top: 50px;
         left: 0;
-        background-color: #5a2a82; /* Цвет фона меню */
-        z-index: 10; /* Убедитесь, что меню поверх других элементов */
+        width: 100%;
+        background-color: #5a2a82;
+        z-index: 15;
+        padding: 10px 0;
     }
 
     .navbar-items.active {
-        display: flex; /* Показываем меню при активном состоянии */
+        display: flex; /* Показываем при клике на бургер */
     }
 
-    .burger-menu {
-        display: flex; /* Показываем бургер-меню на мобильных */
+    .navbar-items a {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
     }
 }
 

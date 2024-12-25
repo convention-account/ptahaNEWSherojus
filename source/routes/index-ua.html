@@ -7,6 +7,17 @@
     <title>Irasas - herojus newspaper</title>
     <link rel="icon" type="image/x-icon" href="../static/img/herojus_purple_logo.ico">
     <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=REM:ital,wght@0,100..900;1,100..900&family=Rubik+Glitch&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -18,29 +29,29 @@
                     <span></span>
                     <span></span>
                 </button>
-                <a href="../../index.html" class="li-item">PAGRINDINIS</a>
+                <img src="../static/img/heroiam_logo.png" alt="Heroiam Logo">
+                <a href="../../index.html" class="li-item">Головна</a>
                 <div class="dropdown">
-                    <a href="#" class="li-item">LAIKRAŠČIAI</a>
+                    <a href="#" class="li-item">Газети</a>
                     <ul class="dropdown-menu">
-                        <li><a href="../routes/choice.html" class="li-item">ARCHYVAS</a></li>
-                        <li><a href="#" class="li-item">NAUJIENOS</a></li>
-                        <li><a href="../routes/irasas.html" class="li-item">VAIZDO ĮRAŠŲ ARCHYVAS</a></li>
+                        <li><a href="../routes/choice.html" class="li-item">Архів</a></li>
+                        <li><a href="#" class="li-item">Новинки</a></li>
+                        <li><a href="../routes/irasas.html" class="li-item">Відео-Архів</a></li>
                     </ul>
                 </div>
-                <a href="#" class="li-item">PRISIJUNKITE</a>
+                <a href="#" class="li-item">Увійти</a>
                 <div class="dropdown language-dropdown">
-                    <a href="#" id="language-link" onclick="switchLanguage('ua')">
-                        <img src="../static/img/lithuanian-icon.svg" alt="LT Flag" class="flag-icon"> LT
+                    <a href="#" id="language-link" onclick="switchLanguage('lt')">
+                        <img src="../static/img/lithuanian-icon.svg" alt="UA Flag" class="flag-icon"> LT
                     </a>
                 </div>
-                <img src="../static/img/heroiam_logo.png" alt="Heroiam Logo">
             </div>
         </div>
     </div>
 
     <div class="parallax-section">
         <div class="parallax-content">
-            <h2 class="parallax-text">Vaizdo įrašų archyvas</h2>
+            <h2 class="parallax-text">Відео-Архів</h2>
             <img src="../static/img/ns.png" alt="Your Image" class="parallax-image">
         </div>
     </div>
@@ -55,6 +66,14 @@
     </div>
 
     <style>
+        .parallax-section {
+            font-family: Ubuntu;
+        }
+
+        .navbar {
+            font-family: cursive;
+        }
+
         /* Стили для секции с видео */
         .video-section {
             display: flex;

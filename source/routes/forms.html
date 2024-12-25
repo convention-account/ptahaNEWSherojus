@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../static/img/herojus_purple_logo.ico">
+    <title>PTAHA NEWS REPORT CENTER</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Herojus;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+
+        nav {
+            background: linear-gradient(135deg, #5a2a82, #7d3abf);
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .menu {
+            display: flex;
+            gap: 15px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 3px 0;
+        }
+
+        .menu {
+            display: flex;
+            font-size: large;
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                background: #333;
+                position: absolute;
+                top: 50px;
+                right: 20px;
+                padding: 10px;
+                border-radius: 5px;
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .burger {
+                display: flex;
+            }
+        }
+
+        form {
+            margin-top: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        form p {
+            margin-bottom: 15px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form button {
+            background: #310952;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background: #4105e7;
+        }
+
+        @font-face {
+            font-family: Herojus;
+            src: url('../static/font/HerojusRegular.woff2');
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">Found a bug? Have a question? Have a complaint? Contact us!
+            <hr>PTAHA NEWS REPORT CENTER
+        </div>
+        <div class="burger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu">
+            <a href="../../index.html">PAGRINDINIS</a>
+            <a href="../routes/choice.html">LAIKRAŠČIAI</a>
+            <a href="#">PRISIJUNKITE</a>
+        </div>
+    </nav>
+    <form name="contact" netlify>
+        <p>
+            <label>NAME <input type="text" name="name" /></label>
+        </p>
+        <p>
+            <label>EMAIL <input type="email" name="email" /></label>
+        </p>
+        <p>
+            <button type="submit">Send</button>
+        </p>
+    </form>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

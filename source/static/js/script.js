@@ -2,7 +2,7 @@
 function switchLanguage(language) {
     if (language === 'ua') {
         document.getElementById('language-link').innerHTML =
-            '<img src="source/static/img/ukrainian-icon.svg" alt="UA Flag" class="flag-icon"> UA';
+            '<img src="source/static/img/ukrainian-icon3.svg" alt="UA Flag" class="flag-icon"> UA';
         window.location.href = 'index-ua.html'; // Переход на украинскую версию сайта
     } else if (language === 'lt') {
         document.getElementById('language-link').innerHTML =
@@ -17,10 +17,10 @@ window.onload = function () {
 
     if (currentPage === 'index.html') {
         languageLink.innerHTML =
-            '<img src="source/static/img/lithuanian-icon.svg" alt="LT Flag" class="flag-icon"> LT';
+            '<img src="source/static/img/lithuanian-icon.svg" alt="UA Flag" class="flag-icon"> UA';
     } else if (currentPage === 'index-ua.html') {
         languageLink.innerHTML =
-            '<img src="source/static/img/ukrainian-icon.svg" alt="UA Flag" class="flag-icon"> UA';
+            '<img src="source/static/img/ukrainian-icon3.svg" alt="LT Flag" class="flag-icon"> LT';
     }
 };
 
