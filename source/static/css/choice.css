@@ -289,7 +289,7 @@ body {
 }
 
 /* Стили для меню на мобильных устройствах */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .burger-menu {
         display: flex;
     }

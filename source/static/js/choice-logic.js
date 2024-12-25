@@ -3,11 +3,11 @@ function switchLanguage(language) {
     if (language === 'ua') {
         document.getElementById('language-link').innerHTML =
             '<img src="source/static/img/ukrainian-icon3.svg" alt="UA Flag" class="flag-icon"> UA';
-        window.location.href = 'index-ua.html'; // Переход на украинскую версию сайта
+        window.location.href = 'choice.html'; // Переход на украинскую версию сайта
     } else if (language === 'lt') {
         document.getElementById('language-link').innerHTML =
             '<img src="source/static/img/lithuanian-icon.svg" alt="LT Flag" class="flag-icon"> LT';
-        window.location.href = 'index.html'; // Переход на литовскую версию сайта
+        window.location.href = 'choice.html'; // Переход на литовскую версию сайта
     }
 }
 
