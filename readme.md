@@ -3,3 +3,4 @@ The Ukrainian school library website is designed for online digitizing of materi
 In the future, I might integrate a Node.js framework to work with the database (e.g., to add a reaction system, like hearts, under new issues). However, this depends on hosting capabilities and my skills, so it's not in the immediate plans.
 
 The site is still slightly unfinished, with plans to add the last issue, more videos, and refine small details.
+"kat@legacyprojectglobal.com" <kat@legacyprojectglobal.com>
