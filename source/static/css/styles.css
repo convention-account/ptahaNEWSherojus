@@ -237,7 +237,7 @@ a.li-item {
     }
 
     .circle {
-        padding: 50px;
+        padding: 30px;
     }
 
     .circle-text {
@@ -281,6 +281,12 @@ a.li-item {
 
 /* Основные стили для бургер-меню */
 @media (max-width: 768px) {
+    .close-btn {
+        left: 15rem;
+        font-size: 300% !important;
+        color: white !important;
+    }
+
     .small-circle-image {
         width: 300px;
         /* Уменьшает ширину изображения */
