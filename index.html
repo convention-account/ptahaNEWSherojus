@@ -142,7 +142,7 @@
                         <li><a href="source/routes/index.html" class="li-item">VAIZDO ĮRAŠŲ ARCHYVAS</a></li>
                     </ul>
                 </div>
-                <a href="#" class="li-item">PRISIJUNKITE</a>
+                <a href="gallery.ptaha-news.online" class="li-item">GALERIJA</a>
                 <div class="dropdown language-dropdown">
                     <a href="#" id="language-link" onclick="switchLanguage('ua')">
                         <img src="source/static/img/ukrainian-icon3.svg" alt="LT Flag" class="flag-icon"> UA
@@ -154,7 +154,7 @@
 
     <div class="parallax-section">
         <div class="parallax-content">
-            <h2 class="parallax-text">Šviežia presa</h2>
+            <h2 class="parallax-text">Naujausios žinios</h2>
             <h2 class="parallax-text2">kiekviename numeryje</h2>
             <img src="source/static/img/ns.png" alt="Your Image" class="parallax-image" inert
                 style="user-select: none;">
@@ -165,10 +165,11 @@
         <div class="circle">
             <p class="circle-text" inert style="user-select: none;"><img src="source/static/img/ptaha.png"></p>
         </div>
-        <h2 class="parallax-text-cr">Mūsų mokyklos laikraštis yra unikalus centras, kuriame pateikiami laikraščio
-            numeriai (nauji ir seni), nufilmuoti vaizdo įrašai (įskaitant specialius interviu ar podkastus) ir
-            mokyklos nuotraukų galerija. Stengiamės integruotis į lietuvių kalbą, deja, kol kas laikraščiai yra tik
-            ukrainiečių kalba. Sekite svetainę, kad gautumėte naujienas!</h2>
+        <h2 class="parallax-text-cr">Mūsų mokyklos laikraščio puslapis - unikalus. Čia pateikiame laikraščio senus ir
+            naujus numerius, įvairius vaizdo įrašus (tinklalaides, ir specialius interviu) bei mokyklos nuotraukų
+            galeriją. Stengiamės integruotis į lietuvių gyvenimą, deja, kol kas negalime išversti laikraščio numerių,
+            jie pateikiami ukrainiečių kalba. Dėkojame, kad domitės mūsų veikla, o norėdami nepraleisti naujienų,
+            prašome pasekti mūsų svetainę!</h2>
     </div>
 
     <div class="circle-section">
@@ -224,30 +225,6 @@
         // Закрытие кастомного алерта
         document.getElementById('closeAlert').addEventListener('click', function () {
             document.getElementById('customAlert').style.display = 'none';
-        });
-    </script>
-    <script>
-        // Protect against bots & common attacks e.g. SQL injection, XSS, CSRF
-        import arcjet, { shield, detectBot } from "@arcjet/node";
-
-        const aj = arcjet({
-            // ARCJET_KEY automatically set by the Netlify integration
-            // Log in at https://app.arcjet.com
-            key: process.env.ARCJET_KEY,
-            rules: [
-                // Block common attacks e.g. SQL injection, XSS, CSRF
-                shield({
-                    // Will block requests. Use "DRY_RUN" to log only
-                    mode: "LIVE",
-                }),
-                // Detect bots
-                detectBot({
-                    mode: "LIVE", // will block requests. Use "DRY_RUN" to log only
-                    // Block all bots except search engine crawlers. See the full list of bots
-                    // for other options: https://arcjet.com/bot-list
-                    allow: ["CATEGORY:SEARCH_ENGINE"],
-                }),
-            ],
         });
     </script>
 </body>
