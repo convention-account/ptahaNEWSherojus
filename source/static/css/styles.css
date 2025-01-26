@@ -282,7 +282,7 @@ a.li-item {
 /* Основные стили для бургер-меню */
 @media (max-width: 768px) {
     .close-btn {
-        left: 15rem;
+        left: 10rem;
         font-size: 300% !important;
         color: white !important;
     }
